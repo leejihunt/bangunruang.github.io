@@ -1,0 +1,60 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menghitung Volume Bangun Ruang</title>
+</head>
+<body>
+    <h1>Menghitung Volume Bangun Ruang</h1>
+ 
+    <h2>Balok</h2>
+    <label for="panjang">Panjang:</label>
+    <input type="number" id="panjang" />
+    <br />
+    <label for="lebar">Lebar:</label>
+    <input type="number" id="lebar" />
+    <br />
+    <label for="tinggi">Tinggi:</label>
+    <input type="number" id="tinggi" />
+    <button onclick="hitungVolumeBalok()">Hitung</button>
+    <p id="hasilBalok"></p>
+ 
+    <h2>Tabung</h2>
+    <label for="jari">Jari-jari:</label>
+    <input type="number" id="jari" />
+    <br />
+    <label for="tinggiTabung">Tinggi:</label>
+    <input type="number" id="tinggiTabung" />
+    <button onclick="hitungVolumeTabung()">Hitung</button>
+    <p id="hasilTabung"></p>
+ 
+    <h2>Bola</h2>
+    <label for="jariBola">Jari-jari:</label>
+    <input type="number" id="jariBola" />
+    <button onclick="hitungVolumeBola()">Hitung</button>
+    <p id="hasilBola"></p>
+ 
+    <script>
+        function hitungVolumeBalok() {
+            var panjang = document.getElementById("panjang").value;
+            var lebar = document.getElementById("lebar").value;
+            var tinggi = document.getElementById("tinggi").value;
+            var volume = panjang * lebar * tinggi;
+            document.getElementById("hasilBalok").innerHTML = "Volume balok: " + volume;
+        }
+ 
+        function hitungVolumeTabung() {
+            var jari = document.getElementById("jari").value;
+            var tinggiTabung = document.getElementById("tinggiTabung").value;
+            var volume = Math.PI * jari * jari * tinggiTabung;
+            document.getElementById("hasilTabung").innerHTML = "Volume tabung: " + volume.toFixed(2);
+        }
+ 
+        function hitungVolumeBola() {
+            var jariBola = document.getElementById("jariBola").value;
+            var volume = (4 / 3) * Math.PI * jariBola * jariBola * jariBola;
+            document.getElementById("hasilBola").innerHTML = "Volume bola: " + volume.toFixed(2);
+        }
+    </script>
+</body>
+</html>
